@@ -31,23 +31,25 @@ class DataTransformation:
                 ,'lunch','test preparation course'
             ]
 
+            #Create pipelines
             num_pipeline=Pipeline(
                 steps=[
-                    ('imputer',SimpleImputer(strategy='median')),
-                    ('scaler', StandardScaler())
+                    ('imputer',SimpleImputer(strategy='median')), #handling missing values
+                    ('scaler', StandardScaler()) #Scaling
                 ]
             )
 
             cat_pipeline=Pipeline(
                 steps=[
                     ('imputer',SimpleImputer(strategy='most_frequent')),
-                    ('encoding',OneHotEncoder())
+                    ('encoding',OneHotEncoder()) #Encoding
                 ]
             )
 
             logging.info(f'Numerical Features : {numerical_columns}')
             logging.info(f'Categorical Features : {categorical_columns}')
 
+            #Combine Pipelines
             preprocessor=ColumnTransformer(
                 [
                     ('num_pipeline',num_pipeline,numerical_columns),
@@ -73,6 +75,7 @@ class DataTransformation:
             target_column='math score'
             numerical_column=['writing score','reading score']
 
+            #seperate features and target
             input_feature_train_df=train_df.drop(columns=[target_column],axis=1)
             target_feature_train_df=train_df[target_column]
 
@@ -90,8 +93,8 @@ class DataTransformation:
             logging.info('saved preprocessing object')
 
             save_object(
-                file_path=self.data_transformation_config.preprocessor_obj_file_path,
-                obj=preprocessor_obj
+                file_path=self.data_transformation_config.preprocessor_obj_file_path, #preprocessor path
+                obj=preprocessor_obj #preprocessor obj
             )
             return(
                 train_arr,
