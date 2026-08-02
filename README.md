@@ -56,6 +56,27 @@ The application demonstrates a complete production-style machine learning workfl
 - 📝 Custom Logging & Exception Handling
 
 ---
+---
+
+# 🖼️ Application Preview
+
+## 🏠 Landing Page
+
+![Landing Page](images/landing_page.png)
+
+---
+
+## 📝 Prediction Page
+
+![Prediction Page](images/prediction_page.png)
+
+---
+
+## 📊 Prediction Result
+
+![Prediction Result](images/prediction_result.png)
+
+---
 
 # 📊 Dataset
 
