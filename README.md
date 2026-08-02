@@ -384,21 +384,6 @@ gunicorn app:app
         Display Prediction
 ```
 
-
-
-
-# 📌 Future Improvements
-
-- Docker Containerization
-- FastAPI REST API
-- CI/CD Pipeline
-- Model Monitoring
-- Database Integration
-- Improved UI/UX
-- User Authentication
-
----
-
 # 👨‍💻 Author
 
 **Shrirang Ambure**
