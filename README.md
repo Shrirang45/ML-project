@@ -1,21 +1,40 @@
-# 🎓 Student Performance Indicator
+# 🎓 Student Performance Indicator (End-to-End Machine Learning Project)
 
-A Machine Learning project that predicts a student's **Math Score** based on demographic information, parental education, lunch type, test preparation course, and other academic scores.
+An End-to-End Machine Learning application that predicts a student's **Mathematics Score** using demographic and academic information. The project demonstrates the complete ML workflow, including data preprocessing, model training, model selection, Flask integration, and cloud deployment.
 
----
-
-## 📌 Project Overview
-
-Student performance is influenced by several factors such as parental education, lunch type, gender, and test preparation.
-
-This project performs Exploratory Data Analysis (EDA), Feature Engineering, Data Preprocessing, and trains multiple Machine Learning regression models to predict student performance.
+🌐 **Live Demo:** https://student-performance-indicator-end-to-end-b9rf.onrender.com
 
 ---
 
-## 📂 Project Structure
+# 📌 Project Overview
 
-```
+The objective of this project is to predict a student's **Math Score** based on several demographic and academic features.
+
+This project follows a production-style machine learning pipeline and includes:
+
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Data Ingestion
+- Data Transformation
+- Model Training
+- Hyperparameter Tuning
+- Prediction Pipeline
+- Flask Web Application
+- Deployment on Render
+
+---
+
+# 📂 Project Structure
+
+```text
 Student Performance Indicator/
+│
+├── artifacts/
+│   ├── model.pkl
+│   ├── preprocessor.pkl
+│   ├── train.csv
+│   ├── test.csv
+│   └── raw.csv
 │
 ├── notebooks/
 │   ├── 1. EDA and Feature Engineering.ipynb
@@ -23,7 +42,23 @@ Student Performance Indicator/
 │   └── StudentsPerformance.csv
 │
 ├── src/
+│   ├── components/
+│   │   ├── data_ingestion.py
+│   │   ├── data_transformation.py
+│   │   └── model_trainer.py
+│   │
+│   ├── pipeline/
+│   │   └── predict_pipeline.py
+│   │
+│   ├── logger.py
+│   ├── exception.py
+│   └── utils.py
 │
+├── templates/
+│   ├── index.html
+│   └── home.html
+│
+├── app.py
 ├── requirements.txt
 ├── setup.py
 ├── README.md
@@ -32,79 +67,116 @@ Student Performance Indicator/
 
 ---
 
-## 📊 Dataset
+# 📊 Dataset
 
 The dataset contains information about students including:
 
 - Gender
 - Race/Ethnicity
 - Parental Level of Education
-- Lunch
+- Lunch Type
 - Test Preparation Course
 - Reading Score
 - Writing Score
-- Math Score (Target)
+- Mathematics Score (Target Variable)
 
 ---
 
-## 🔍 Exploratory Data Analysis (EDA)
+# 🔍 Exploratory Data Analysis
 
 Performed:
 
 - Dataset inspection
-- Missing value check
+- Missing value analysis
 - Duplicate value check
-- Feature type identification
+- Data type identification
 - Statistical summary
 - Correlation analysis
 - Distribution plots
 - Histograms
-- Boxplots
-- Countplots
-- Pairwise feature analysis
+- Count plots
+- Box plots
 
 ### Feature Engineering
 
-Created two additional features:
+Additional features created during analysis:
 
 - Total Score
 - Average Score
 
 ---
 
-## ⚙️ Data Preprocessing
+# ⚙️ Machine Learning Pipeline
 
-Applied:
+## 1️⃣ Data Ingestion
 
-- One Hot Encoding for categorical features
-- Standard Scaling for numerical features
-- Column Transformer pipeline
-
-Libraries used:
-
-- pandas
-- numpy
-- scikit-learn
+- Reads the dataset
+- Splits into training and testing datasets
+- Saves:
+  - raw.csv
+  - train.csv
+  - test.csv
 
 ---
 
-## 🤖 Machine Learning Models
+## 2️⃣ Data Transformation
 
-The following regression algorithms were trained:
+Preprocessing is implemented using Scikit-learn Pipelines.
+
+### Numerical Pipeline
+
+- Missing value imputation
+- Standard Scaling
+
+### Categorical Pipeline
+
+- Missing value imputation
+- One Hot Encoding
+
+The preprocessing pipeline is saved as:
+
+```
+preprocessor.pkl
+```
+
+---
+
+## 3️⃣ Model Training
+
+The following regression algorithms were trained and compared:
 
 - Linear Regression
-- Lasso Regression
-- Ridge Regression
-- K-Neighbors Regressor
 - Decision Tree Regressor
 - Random Forest Regressor
+- Gradient Boosting Regressor
+- AdaBoost Regressor
+- KNeighbors Regressor
 - XGBoost Regressor
 - CatBoost Regressor
-- AdaBoost Regressor
+
+Hyperparameter tuning is performed using **GridSearchCV**.
+
+The best-performing model is saved as:
+
+```
+model.pkl
+```
 
 ---
 
-## 📈 Model Evaluation
+## 4️⃣ Prediction Pipeline
+
+The prediction pipeline:
+
+- Loads the trained model
+- Loads the preprocessing object
+- Transforms user input
+- Predicts Mathematics Score
+- Returns prediction to the Flask application
+
+---
+
+# 📈 Model Evaluation
 
 Evaluation Metrics:
 
@@ -113,80 +185,194 @@ Evaluation Metrics:
 - Mean Squared Error (MSE)
 - Root Mean Squared Error (RMSE)
 
-The models were compared based on their predictive performance.
+The model with the highest R² score is automatically selected for deployment.
 
 ---
 
-## 📉 Visualization
+# 🌐 Web Application
 
-The project includes:
+Users can:
 
-- Histograms
-- Countplots
-- Correlation Heatmap
-- Boxplots
-- Actual vs Predicted Scatter Plot
+- Select demographic details
+- Enter Reading Score
+- Enter Writing Score
+- Predict Mathematics Score instantly
 
 ---
 
-## 🛠️ Technologies Used
+# 🛠️ Technologies Used
+
+### Programming
 
 - Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-Learn
+
+### Machine Learning
+
+- Scikit-learn
 - XGBoost
 - CatBoost
-- Jupyter Notebook
+
+### Data Analysis
+
+- Pandas
+- NumPy
+
+### Visualization
+
+- Matplotlib
+- Seaborn
+
+### Web Framework
+
+- Flask
+
+### Deployment
+
+- Gunicorn
+- Render
+
+### Version Control
+
+- Git
+- GitHub
 
 ---
 
-## 🚀 How to Run
+# 🚀 Installation
 
-1. Clone the repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/Shrirang45/ML-project.git
 ```
 
-2. Navigate to project
+### Navigate to the Project
 
 ```bash
 cd ML-project
 ```
 
-3. Install dependencies
+### Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### Activate Virtual Environment
+
+Windows
+
+```bash
+venv\Scripts\activate
+```
+
+Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Launch Jupyter Notebook
+### Run the Application
 
 ```bash
-jupyter notebook
+python app.py
 ```
 
-5. Run:
+The application will be available at:
 
-- `1. EDA and Feature Engineering.ipynb`
-- `2. Model Training.ipynb`
-
----
-
-## 📌 Future Improvements
-
-- Build an end-to-end ML pipeline
-- Add model serialization using Pickle
-- Create a prediction web app using Flask
-- Deploy the project on Render or AWS
+```
+http://127.0.0.1:5000
+```
 
 ---
 
-## 👨‍💻 Author
+# 🌍 Deployment
+
+The application is deployed on **Render**.
+
+### Build Command
+
+```bash
+pip install -r requirements.txt
+```
+
+### Start Command
+
+```bash
+gunicorn app:app
+```
+
+---
+
+# 🔄 Application Workflow
+
+```text
+User Input
+      │
+      ▼
+Flask Web Form
+      │
+      ▼
+CustomData
+      │
+      ▼
+Pandas DataFrame
+      │
+      ▼
+Preprocessing Pipeline
+      │
+      ▼
+Best Trained Model
+      │
+      ▼
+Predicted Mathematics Score
+      │
+      ▼
+Display Result
+```
+
+---
+
+# ✨ Key Features
+
+- End-to-End Machine Learning Pipeline
+- Modular Project Structure
+- Logging and Custom Exception Handling
+- Data Preprocessing Pipeline
+- Hyperparameter Tuning
+- Model Serialization
+- Flask Integration
+- Live Deployment on Render
+
+---
+
+# 📌 Future Improvements
+
+- Modern responsive UI
+- Docker containerization
+- CI/CD pipeline
+- Model monitoring
+- Cloud model storage
+- REST API using FastAPI
+
+---
+
+# 👨‍💻 Author
 
 **Shrirang Ambure**
 
+🎓 B.Tech – Artificial Intelligence & Data Science
+
 GitHub: https://github.com/Shrirang45
+
+---
+
+## ⭐ Support
+
+If you found this project useful, please consider giving it a **⭐ Star** on GitHub.
