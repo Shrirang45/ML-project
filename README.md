@@ -362,39 +362,8 @@ gunicorn app:app
         Display Prediction
 ```
 
----
 
-# 📸 Screenshots
 
-### 🏠 Home Page
-
-> Add screenshot here
-
-```
-images/home.png
-```
-
----
-
-### 📝 Prediction Form
-
-> Add screenshot here
-
-```
-images/form.png
-```
-
----
-
-### 📊 Prediction Result
-
-> Add screenshot here
-
-```
-images/result.png
-```
-
----
 
 # 📌 Future Improvements
 
