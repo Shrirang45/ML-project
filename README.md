@@ -20,7 +20,7 @@ An **End-to-End Machine Learning Web Application** that predicts a student's **M
 
 ## 📂 GitHub Repository
 
-🔗 https://github.com/Shrirang45/YOUR_GITHUB_REPO
+🔗 https://github.com/Shrirang45/Student-Performance-Indicator-End-to-End-project-
 
 ---
 
