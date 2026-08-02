@@ -7,6 +7,7 @@
 ![CatBoost](https://img.shields.io/badge/CatBoost-Ensemble-yellow)
 ![Render](https://img.shields.io/badge/Deployment-Render-purple)
 ![License](https://img.shields.io/badge/License-MIT-brightgreen)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge)](https://student-performance-indicator-end-to-end-b9rf.onrender.com)
 
 An **End-to-End Machine Learning Web Application** that predicts a student's **Mathematics Score** based on demographic and academic information. The project demonstrates the complete machine learning lifecycle—from data preprocessing and model training to deployment using **Flask** and **Render**.
 
