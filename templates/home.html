@@ -151,11 +151,13 @@
 
     {% if results %}
 
-    <div class="prediction">
-        Predicted Math Score : {{ results }}
-    </div>
-
-    {% endif %}
+    {% if results is not none %}
+<div class="prediction-card">
+    <h2>📊 Prediction Result</h2>
+    <p class="score">{{ results }}</p>
+    <small>Predicted Mathematics Score</small>
+</div>
+{% endif %}
 
 </div>
 
