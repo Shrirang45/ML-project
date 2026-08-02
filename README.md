@@ -1,16 +1,34 @@
-# 🎓 Student Performance Indicator (End-to-End Machine Learning Project)
+# 🎓 Student Performance Indicator
 
-An End-to-End Machine Learning application that predicts a student's **Mathematics Score** using demographic and academic information. The project demonstrates the complete ML workflow, including data preprocessing, model training, model selection, Flask integration, and cloud deployment.
+![Python](https://img.shields.io/badge/Python-3.13-blue)
+![Flask](https://img.shields.io/badge/Flask-Web%20Application-green)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-orange)
+![XGBoost](https://img.shields.io/badge/XGBoost-Regression-red)
+![CatBoost](https://img.shields.io/badge/CatBoost-Ensemble-yellow)
+![Render](https://img.shields.io/badge/Deployment-Render-purple)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
 
-🌐 **Live Demo:** https://student-performance-indicator-end-to-end-b9rf.onrender.com
+An **End-to-End Machine Learning Web Application** that predicts a student's **Mathematics Score** based on demographic and academic information. The project demonstrates the complete machine learning lifecycle—from data preprocessing and model training to deployment using **Flask** and **Render**.
 
 ---
 
-# 📌 Project Overview
+## 🌐 Live Demo
 
-The objective of this project is to predict a student's **Math Score** based on several demographic and academic features.
+🔗 https://student-performance-indicator-end-to-end-b9rf.onrender.com
 
-This project follows a production-style machine learning pipeline and includes:
+---
+
+## 📂 GitHub Repository
+
+🔗 https://github.com/Shrirang45/YOUR_GITHUB_REPO
+
+---
+
+# 📖 Project Overview
+
+Student performance is influenced by multiple demographic and educational factors. This project predicts a student's **Mathematics Score** using machine learning models trained on academic and demographic data.
+
+The application demonstrates a complete production-style machine learning workflow including:
 
 - Exploratory Data Analysis (EDA)
 - Feature Engineering
@@ -20,14 +38,48 @@ This project follows a production-style machine learning pipeline and includes:
 - Hyperparameter Tuning
 - Prediction Pipeline
 - Flask Web Application
-- Deployment on Render
+- Cloud Deployment
 
 ---
 
-# 📂 Project Structure
+# ✨ Features
+
+- 📊 Exploratory Data Analysis
+- 🔄 Data Preprocessing Pipeline
+- 🤖 Multiple Regression Models
+- ⚡ Hyperparameter Tuning
+- 💾 Model Serialization
+- 🌐 Flask Web Interface
+- 🚀 Live Deployment on Render
+- 📦 Modular Project Structure
+- 📝 Custom Logging & Exception Handling
+
+---
+
+# 📊 Dataset
+
+The dataset contains the following student attributes:
+
+| Feature | Type |
+|----------|------|
+| Gender | Categorical |
+| Race/Ethnicity | Categorical |
+| Parental Level of Education | Categorical |
+| Lunch Type | Categorical |
+| Test Preparation Course | Categorical |
+| Reading Score | Numerical |
+| Writing Score | Numerical |
+
+### 🎯 Target Variable
+
+- Mathematics Score
+
+---
+
+# 📁 Project Structure
 
 ```text
-Student Performance Indicator/
+Student-Performance-Indicator/
 │
 ├── artifacts/
 │   ├── model.pkl
@@ -67,73 +119,37 @@ Student Performance Indicator/
 
 ---
 
-# 📊 Dataset
-
-The dataset contains information about students including:
-
-- Gender
-- Race/Ethnicity
-- Parental Level of Education
-- Lunch Type
-- Test Preparation Course
-- Reading Score
-- Writing Score
-- Mathematics Score (Target Variable)
-
----
-
-# 🔍 Exploratory Data Analysis
-
-Performed:
-
-- Dataset inspection
-- Missing value analysis
-- Duplicate value check
-- Data type identification
-- Statistical summary
-- Correlation analysis
-- Distribution plots
-- Histograms
-- Count plots
-- Box plots
-
-### Feature Engineering
-
-Additional features created during analysis:
-
-- Total Score
-- Average Score
-
----
-
-# ⚙️ Machine Learning Pipeline
+# ⚙️ Machine Learning Workflow
 
 ## 1️⃣ Data Ingestion
 
-- Reads the dataset
-- Splits into training and testing datasets
-- Saves:
-  - raw.csv
-  - train.csv
-  - test.csv
+- Load dataset
+- Split into Train and Test datasets
+- Save datasets into artifacts folder
+
+Outputs:
+
+- raw.csv
+- train.csv
+- test.csv
 
 ---
 
 ## 2️⃣ Data Transformation
 
-Preprocessing is implemented using Scikit-learn Pipelines.
+The preprocessing pipeline is implemented using **Scikit-Learn Pipelines**.
 
 ### Numerical Pipeline
 
-- Missing value imputation
+- Missing Value Imputation
 - Standard Scaling
 
 ### Categorical Pipeline
 
-- Missing value imputation
+- Missing Value Imputation
 - One Hot Encoding
 
-The preprocessing pipeline is saved as:
+The preprocessing object is saved as:
 
 ```
 preprocessor.pkl
@@ -143,7 +159,7 @@ preprocessor.pkl
 
 ## 3️⃣ Model Training
 
-The following regression algorithms were trained and compared:
+The following regression models were trained and compared:
 
 - Linear Regression
 - Decision Tree Regressor
@@ -154,7 +170,7 @@ The following regression algorithms were trained and compared:
 - XGBoost Regressor
 - CatBoost Regressor
 
-Hyperparameter tuning is performed using **GridSearchCV**.
+Hyperparameter tuning was performed using **GridSearchCV**.
 
 The best-performing model is saved as:
 
@@ -172,31 +188,30 @@ The prediction pipeline:
 - Loads the preprocessing object
 - Transforms user input
 - Predicts Mathematics Score
-- Returns prediction to the Flask application
+- Displays prediction on the web application
 
 ---
 
 # 📈 Model Evaluation
 
-Evaluation Metrics:
+Evaluation Metrics Used:
 
 - R² Score
 - Mean Absolute Error (MAE)
 - Mean Squared Error (MSE)
 - Root Mean Squared Error (RMSE)
 
-The model with the highest R² score is automatically selected for deployment.
+The model with the highest R² score is selected automatically for deployment.
 
 ---
 
 # 🌐 Web Application
 
-Users can:
+The Flask application allows users to:
 
-- Select demographic details
-- Enter Reading Score
-- Enter Writing Score
-- Predict Mathematics Score instantly
+- Enter student details
+- Predict Mathematics Score
+- View prediction instantly
 
 ---
 
@@ -206,23 +221,23 @@ Users can:
 
 - Python
 
-### Machine Learning
-
-- Scikit-learn
-- XGBoost
-- CatBoost
-
 ### Data Analysis
 
 - Pandas
 - NumPy
+
+### Machine Learning
+
+- Scikit-Learn
+- XGBoost
+- CatBoost
 
 ### Visualization
 
 - Matplotlib
 - Seaborn
 
-### Web Framework
+### Backend
 
 - Flask
 
@@ -240,17 +255,21 @@ Users can:
 
 # 🚀 Installation
 
-### Clone the Repository
+### Clone Repository
 
 ```bash
-git clone https://github.com/Shrirang45/ML-project.git
+git clone https://github.com/Shrirang45/YOUR_GITHUB_REPO.git
 ```
 
-### Navigate to the Project
+---
+
+### Navigate to Project
 
 ```bash
-cd ML-project
+cd YOUR_GITHUB_REPO
 ```
+
+---
 
 ### Create Virtual Environment
 
@@ -258,19 +277,23 @@ cd ML-project
 python -m venv venv
 ```
 
-### Activate Virtual Environment
+---
 
-Windows
+### Activate Environment
+
+#### Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-Linux / macOS
+#### Linux/macOS
 
 ```bash
 source venv/bin/activate
 ```
+
+---
 
 ### Install Dependencies
 
@@ -278,13 +301,15 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Run the Application
+---
+
+### Run Application
 
 ```bash
 python app.py
 ```
 
-The application will be available at:
+Visit:
 
 ```
 http://127.0.0.1:5000
@@ -294,7 +319,7 @@ http://127.0.0.1:5000
 
 # 🌍 Deployment
 
-The application is deployed on **Render**.
+The application is deployed using **Render**.
 
 ### Build Command
 
@@ -313,53 +338,73 @@ gunicorn app:app
 # 🔄 Application Workflow
 
 ```text
-User Input
-      │
-      ▼
-Flask Web Form
-      │
-      ▼
-CustomData
-      │
-      ▼
-Pandas DataFrame
-      │
-      ▼
-Preprocessing Pipeline
-      │
-      ▼
-Best Trained Model
-      │
-      ▼
-Predicted Mathematics Score
-      │
-      ▼
-Display Result
+             User
+               │
+               ▼
+      Flask Web Application
+               │
+               ▼
+        Collect User Input
+               │
+               ▼
+        Prediction Pipeline
+               │
+               ▼
+      Data Preprocessing
+               │
+               ▼
+       Trained ML Model
+               │
+               ▼
+   Predicted Mathematics Score
+               │
+               ▼
+        Display Prediction
 ```
 
 ---
 
-# ✨ Key Features
+# 📸 Screenshots
 
-- End-to-End Machine Learning Pipeline
-- Modular Project Structure
-- Logging and Custom Exception Handling
-- Data Preprocessing Pipeline
-- Hyperparameter Tuning
-- Model Serialization
-- Flask Integration
-- Live Deployment on Render
+### 🏠 Home Page
+
+> Add screenshot here
+
+```
+images/home.png
+```
+
+---
+
+### 📝 Prediction Form
+
+> Add screenshot here
+
+```
+images/form.png
+```
+
+---
+
+### 📊 Prediction Result
+
+> Add screenshot here
+
+```
+images/result.png
+```
 
 ---
 
 # 📌 Future Improvements
 
-- Modern responsive UI
-- Docker containerization
-- CI/CD pipeline
-- Model monitoring
-- Cloud model storage
-- REST API using FastAPI
+- Docker Containerization
+- FastAPI REST API
+- CI/CD Pipeline
+- Model Monitoring
+- Database Integration
+- Improved UI/UX
+- User Authentication
 
 ---
 
@@ -371,8 +416,12 @@ Display Result
 
 GitHub: https://github.com/Shrirang45
 
+LinkedIn: *(Add your LinkedIn Profile)*
+
 ---
 
-## ⭐ Support
+# ⭐ Support
 
-If you found this project useful, please consider giving it a **⭐ Star** on GitHub.
+If you found this project useful, consider giving this repository a **⭐ Star** on GitHub.
+
+It motivates me to build more open-source projects.
